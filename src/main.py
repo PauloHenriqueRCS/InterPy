@@ -5,7 +5,8 @@ import re
 def fileopen(fileopen):
     try:
         file = io.open(fileopen, mode="r", encoding="utf-8")
-        return file.read()
+        s = re.sub("\s+", " ", file.read()).split(" ")
+        return s
     except IOError as identifier:
         print(str(identifier))
     finally:
@@ -13,6 +14,5 @@ def fileopen(fileopen):
 
 
 if __name__ == "__main__":
-    str = fileopen("src/words.txt")
-    s = re.sub("\s+", " ", str).split(" ")
-    print(s)
+    str = fileopen("words.txt")
+    print(str)
