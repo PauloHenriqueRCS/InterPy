@@ -1,18 +1,13 @@
 import io
 import re
+import sys
+from procText.tagText import tagText
+from procText.tagTextAlt import tagTextAlt
 
-
-def fileopen(fileopen):
-    try:
-        file = io.open(fileopen, mode="r", encoding="utf-8")
-        s = re.sub("\s+", " ", file.read()).split(" ")
-        return s
-    except IOError as identifier:
-        print(str(identifier))
-    finally:
-        file.close()
-
+def proc(fileopen):
+    return tagTextAlt(fileopen)
 
 if __name__ == "__main__":
-    str = fileopen("words.txt")
+    str = proc("../outFiles/teste.xul")
+
     print(str)
