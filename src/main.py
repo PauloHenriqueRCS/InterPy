@@ -1,13 +1,8 @@
 import io
 import re
 import sys
-from procText.tagText import tagText
-from procText.tagTextAlt import tagTextAlt
-
-def proc(fileopen):
-    return tagTextAlt(fileopen)
+from  monsterInterpreter import MonsterInterpreter
 
 if __name__ == "__main__":
-    str = proc("../outFiles/teste.xul")
-
-    print(str)
+    interpreter = MonsterInterpreter()
+    print()
