@@ -1,5 +1,6 @@
-import src.monsterInterpreter.MonsterInterpreter
+import sys
+
+from src.baseModules import *
 
 if __name__ == "__main__":
-    
-    print()
+    filestr = fileread("../outFiles/teste.xul")
