@@ -1,15 +1,18 @@
 import io
+import re
 
 class MonsterInterpreter:
-    def __init__(self, filePath=""):
-        self.filePath = filePath
-        self.fileContent
+    filepath: str
+    filecontent: str
+    fileobj: type(io)
 
-    def fileRead(self, fielePath):
-        self.filePath = filePath
-        
-    try:
-        fileObj = io.open(self.filePath, mode="r", encoding="utf-8")
-        self.fileContent = fileObj.read()
-    except IOError as identifier:
-        print(str(identifier))
+    def __init__(self, filepath=""):
+        self.filepath = filepath
+
+    def fileread(self, filepath):
+        self.filepath = filepath
+        try:
+            fileobj = io.open(self.filepath, mode="r", encoding="utf-8")
+            self.filecontent = fileobj.read()
+        except IOError as identifier:
+            print(str(identifier))

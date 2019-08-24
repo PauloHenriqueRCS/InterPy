@@ -1,8 +1,5 @@
-import io
-import re
-import sys
-from  monsterInterpreter import MonsterInterpreter
+import src.monsterInterpreter.MonsterInterpreter
 
 if __name__ == "__main__":
-    interpreter = MonsterInterpreter()
+    
     print()
