@@ -8,7 +8,7 @@ def fileread(filepath):
         filecontent = open(filepath, mode="r", encoding="utf-8")
         for line in filecontent:
             if line.find("//") == -1:
-                fstr.append(line)
+                fstr.append(re.sub("\s+", " ", line).strip().split(";"))
             else:
                 continue
         return fstr
@@ -19,5 +19,5 @@ def fileread(filepath):
 
 
 if __name__ == "__main__":
-    filestr = fileread("outFiles/teste.xul")
+    filestr = fileread("../outFiles/teste.xul")
     print(filestr)
