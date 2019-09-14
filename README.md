@@ -4,8 +4,20 @@ InterPy is an interpreter created for python.
 
 ## Getting Started
 
-The Levels of interpreter: Lexical Analysis, Syntax Analysis, Semantic Analysis
+The Levels of interpreter: Lexical Analysis, Syntax Analysis, Semantic Analysis.
 
+Our reserved word list:
+int
+float
+double
+bool
+string
+for
+while
+if
+else
+break
+default
 
 ### Lexical analysis
 
