@@ -6,18 +6,10 @@ InterPy is an interpreter created for python.
 
 The Levels of interpreter: Lexical Analysis, Syntax Analysis, Semantic Analysis.
 
-Our reserved word list:
-int
-float
-double
-bool
-string
-for
-while
-if
-else
-break
-default
+Keywords; Examples-for, while, if etc.
+Identifier; Examples-Variable name, function name etc.
+Operators; Examples '+', '++', '-' etc.
+Separators; Examples ',' ';' etc
 
 ### Lexical analysis
 
