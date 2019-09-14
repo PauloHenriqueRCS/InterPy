@@ -10,7 +10,38 @@ Keywords; Examples-for, while, if etc.
 Identifier; Examples-Variable name, function name etc.
 Operators; Examples '+', '++', '-' etc.
 Separators; Examples ',' ';' etc
+
+Simple example: 
+int main(){
+  int x = 10, y = 90;
+  return x+y;
+}
 ```
+Now we´re going to tokenization:
+Legend: token => (key,Value)
+```
+(keyword, int )
+(identifier, main )
+(separator, ( )
+(separator, ) )
+(separator, { )
+(keyword, int)
+(identifier, x )
+(operator, = )
+(identifier, 10 )
+(separator, , )
+(identifier, y )
+(operator, = )
+(identifier, 90 )
+(separator, ; )
+(keyword, return )
+(identifier, x )
+(operator, + )
+(identifier, y )
+(separator, ; )
+(separator, } )
+```
+After tokenazation our program we got  twelve tokens.
 
 ### Lexical analysis
 
