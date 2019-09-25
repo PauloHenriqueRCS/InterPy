@@ -1,0 +1,59 @@
+<{, {>
+<//,//>
+<keyword, int>
+<ID, i>
+<;, ;>
+<keyword, int>
+<ID, j>
+<;, ;>
+<keyword, float>
+<ID, x>
+<;, ;>
+<keyword, bool>
+<ID, y>
+<;, ;>
+<ID, j>
+<=, =>
+<ID,10>
+<;, ;>
+<ID, i>
+<=, =>
+<ID,20>
+<;, ;>
+<ID, i>
+<=, =>
+<ID, i>
+<+,+>
+<ID, j>
+<;, ;>
+<ID, x>
+<=, =>
+<ID, 13.8>
+<;,;>
+<ID, y>
+<=, =>
+<keyword, true>
+<keyword, while>
+<(, (>
+<ID, y>
+<),)>
+<{,{>
+<ID, i>
+<=, =>
+<ID, i>
+<+, +>
+<ID, j>
+<;, ;>
+<keyword, if>
+<(,(>
+<ID, i>
+<<,<>
+<ID, j>
+<),)>
+<keyword, break>
+<;, ;>
+<},}>
+<},}>
+
+
+
