@@ -1,56 +1,56 @@
 <{, {>
 <//,//>
-<keyword, int>
-<ID, i>
+<kw, int>
+<id, i>
 <;, ;>
-<keyword, int>
-<ID, j>
+<kw, int>
+<id, j>
 <;, ;>
-<keyword, float>
-<ID, x>
+<kw, float>
+<id, x>
 <;, ;>
-<keyword, bool>
-<ID, y>
+<kw, bool>
+<id, y>
 <;, ;>
-<ID, j>
+<id, j>
 <=, =>
-<ID,10>
+<id,10>
 <;, ;>
-<ID, i>
+<id, i>
 <=, =>
-<ID,20>
+<id,20>
 <;, ;>
-<ID, i>
+<id, i>
 <=, =>
-<ID, i>
+<id, i>
 <+,+>
-<ID, j>
+<id, j>
 <;, ;>
-<ID, x>
+<id, x>
 <=, =>
-<ID, 13.8>
+<id, 13.8>
 <;,;>
-<ID, y>
+<id, y>
 <=, =>
-<keyword, true>
-<keyword, while>
+<kw, true>
+<kw, while>
 <(, (>
-<ID, y>
+<id, y>
 <),)>
 <{,{>
-<ID, i>
+<id, i>
 <=, =>
-<ID, i>
+<id, i>
 <+, +>
-<ID, j>
+<id, j>
 <;, ;>
-<keyword, if>
+<kw, if>
 <(,(>
-<ID, i>
+<id, i>
 <<,<>
-<ID, j>
+<id, j>
 <),)>
-<keyword, break>
+<kw, break>
 <;, ;>
 <},}>
 <},}>
