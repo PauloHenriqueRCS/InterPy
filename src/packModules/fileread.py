@@ -15,7 +15,9 @@ def fileread(filepath):
                     if el != "":
                         if ';' in el:
                             fstr.append(el[:-1])
+                            print(el[:-1])
                             fstr.append(el[-1:])
+                            print(el[-1:])
                         else:
                             fstr.append(el)
                     else:
