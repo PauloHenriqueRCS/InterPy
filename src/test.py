@@ -5,5 +5,5 @@ from packModules.matchsymbols import Matchsymbols
 if __name__ == "__main__":
     MS = Matchsymbols()
     tokens = fileread("outFiles/teste.xul")
-    MS.match(tokens)
-   
+    print(tokens)
+    MS.matchprint(tokens)   

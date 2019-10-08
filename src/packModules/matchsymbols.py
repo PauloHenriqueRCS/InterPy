@@ -29,7 +29,10 @@ class Matchsymbols:
             "!=": "!=",
             "==": "=="
         }
-
+        self.key_list = self.symbols.keys()
+        self.type_list = ['int', 'float', 'double', 'str', 'kw', 'bool']
+        self.logical_list = ['=', '<', '>', '<=', '>=', '!=', '==']
+       
     def tonumber(self, number):
         try:
             float(self.number)
@@ -39,28 +42,31 @@ class Matchsymbols:
         return False
 
     def match(self, tokens):
-        key_list = self.symbols.keys()
-        prev = next(iter(key_list))
+        prev = next(iter(self.key_list))
         for tc in tokens:
-            if tc in key_list:
+            if tc in self.key_list:
                 prev = tc
                 continue
             else:
-                if (prev == 'int' or 'float' or 'double' or 'str' or 'kw' or 'bool') and (prev != '=') and (tc.isdigit()):
-                    raise ValueError("token <{tk}> nao esta presente em symbols.\n".format(tk=repr(tc)))
+                if prev in self.type_list and prev != '=' and tc.isdigit():
+                    raise ValueError("token <{}> not a symbol.\n".format(tc))
             prev = tc
 
     def matchprint(self, tokens):
-        key_list = self.symbols.keys()
-        prev = next(iter(key_list))
+        prev = next(iter(self.key_list))
         for tc in tokens:
-            if tc in key_list:
-                print("token <" + tc + "> esta presente em symbols.\n")
-            else:
-                if prev == 'int' or 'float' or 'double' or 'str' and tc.isdigit() is False:
-                    print("token <{tk}> esta presente em symbols.\n".format(tk=repr(tc)))
-                elif (prev == 'int' or 'float' or 'double' or 'str' or 'kw' or 'bool') and (prev != '=') and (tc.isdigit()):
-                    print("token <{tk}> nao esta presente em symbols.\n".format(tk=repr(tc)))
+            if tc in self.key_list:
+                print("token <{}> is a symbol.\n".format(tc))
+            else: #Necessario corrigir como faremos para validar o symbol id direito
+                if prev in self.key_list:
+                    if tc.isdigit() is False:
+                        print("token <{}> is a symbol.\n".format(tc))
+                    elif prev in ['[', ']', '(', ')'] and tc.isdigit():
+                        print("token <{}> is a symbol.\n".format(tc))
+                    elif prev in self.logical_list and tc.isdigit():
+                        print("token <{}> is a symbol.\n".format(tc))
+                    elif prev in self.type_list and tc.isdigit():
+                        print("token <{}> not a symbol.\n".format(tc))
                 else:
-                    print("token <{tk}> nao esta presente em symbols.\n".format(tk=repr(tc)))
+                    print("token <{}> not a symbol.\n".format(tc))
             prev = tc

@@ -1,16 +1,19 @@
 {
-    //Este é o nosso programa exemplo. Viva $%^*&%!!!!
+    //out line comment
      int i; int j; float x; bool y;
      j = 10; i = 20;
-     i = i + j;
+     i = i + j;//in line comment
 
      x = 13.8;
 
      y = true; 
-     while ( y ) {
 
+     while ( y ) {
            i = i + j;
            if ( i < j ) break;
-
+     }
+     
+       if ( 10 > 5 ) {
+             i = 10;
      }
 }
