@@ -1,0 +1,15 @@
+{
+    //out line comment
+    int i; int j; float x; bool y; string nome;
+    j = 10; i = 20;//in line comment
+    i = i + j;
+    x = 13.8;
+    y = True;
+    nome = "oi eu sou Goku";
+    while ( y){
+        i = i + j;
+        if ( i < j ){
+            break;
+        }
+    }
+}
