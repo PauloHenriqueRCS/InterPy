@@ -3,5 +3,5 @@
     "python.linting.pylintEnabled": true,
     "python.linting.mypyEnabled": false,
     "python.linting.flake8Enabled": false,
-    "python.pythonPath": "C:\\Users\\Paulo\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
+    "python.pythonPath": "/bin/python3"
 }

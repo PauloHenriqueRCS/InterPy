@@ -1,22 +1,33 @@
-from packModules.fileread import fileread
+from packModules.fileread import fileReadCode
+from packModules.fileread import fileRead
 from packModules.filewrite import filewrite
-from packModules.lexical import Lexical
+from packModules.lex import Lex
+from packModules.syn import Syn
 
 def writeresults(results, filename):
     filewrite(results, filename)
 
-def procexemples(lexical):
+def lexAnalysis(lex):
     for index in range(1, 11):
         filename = "outFiles/teste{}.xul".format(index)
-        filecontent = fileread(filename)
-        tokenlist = lexical.validating(filecontent)
+        filecontent = fileReadCode(filename)
+        tokenlist = lex.analysis(filecontent)
         writeresults(tokenlist, filename)
 
+def synAnalysis(syn):
+        filename = "outFiles/synTest.txt"
+        filecontent = fileRead(filename)
+        syn.analysis(filecontent)
+
+
 if __name__ == "__main__":
-    lexical = Lexical()
-    procexemples(lexical)
+    #lex = Lex()
+    #lexAnalysis(lex)
+    syn = Syn()
+    synAnalysis(syn)
+    
     #tokens = fileread("outFiles/teste9.xul")
-    #tlist = lexical.validating(tokens)
+    #tlist = lexical.analysis(tokens)
     #writeresults(tlist, "outFiles/teste9.xul")
     #lexical.tokenlistprint(tlist)
         

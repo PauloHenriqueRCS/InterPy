@@ -1,7 +1,7 @@
 import re
 
 
-class Lexical:
+class Lex:
     def __init__(self):
         self.lexeme = ''
         self.tokens_list = []
@@ -80,7 +80,7 @@ class Lexical:
         self.tokens_list.append(dict({self.symbols_dict[symdict]: self.lexeme}))
         self.lexeme = ''
 
-    def validating(self, content):
+    def analysis(self, content):
         self.lexeme = ''
         self.tokens_list = []
         for lex in range(0, len(content)):

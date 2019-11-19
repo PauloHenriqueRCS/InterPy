@@ -1,4 +1,4 @@
-def fileread(filepath):
+def fileReadCode(filepath):
     content = []
     try:
         filecontent = open(filepath, mode="r", encoding="utf-8")
@@ -12,6 +12,15 @@ def fileread(filepath):
                     content.append(el)
         content = '@'.join(content)
         return content
+    except IOError as identifier:
+        print(str(identifier))
+    finally:
+        filecontent.close()
+
+def fileRead(filepath):
+    try:
+        filecontent = open(filepath, mode="r", encoding="utf-8")
+        return filecontent.readlines()
     except IOError as identifier:
         print(str(identifier))
     finally:
