@@ -19,7 +19,11 @@ class Syn:
         return self.tokens[0]
 
     def analysis(self, list_tokens):
+        list_tokens
         self.charge(list_tokens)
         print(self.current_token())
         self.next()
         print(self.current_token())
+
+    def productionA(self):
+        self.tokens
