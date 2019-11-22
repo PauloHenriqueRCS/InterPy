@@ -1,5 +1,5 @@
 from packModules.fileread import fileReadCode
-from packModules.fileread import fileRead
+from packModules.fileread import fileRead, getFileGrammar
 from packModules.filewrite import filewrite
 from packModules.lex import Lex
 from packModules.syn import Syn
@@ -16,8 +16,10 @@ def lexAnalysis(lex):
 
 def synAnalysis(syn):
         filename = "outFiles/synTest.txt"
-        filecontent = fileRead(filename)
-        syn.analysis(filecontent)
+        filecontentT = fileRead(filename)
+        filename = "dfa/Grammar.txt"
+        filecontentG = getFileGrammar(filename)
+        syn.analysis(filecontentT, filecontentG)
 
 
 if __name__ == "__main__":
@@ -25,9 +27,4 @@ if __name__ == "__main__":
     #lexAnalysis(lex)
     syn = Syn()
     synAnalysis(syn)
-    
-    #tokens = fileread("outFiles/teste9.xul")
-    #tlist = lexical.analysis(tokens)
-    #writeresults(tlist, "outFiles/teste9.xul")
-    #lexical.tokenlistprint(tlist)
         
