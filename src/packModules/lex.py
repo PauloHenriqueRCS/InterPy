@@ -33,6 +33,7 @@ class Lex:
             'else': 'else',
             'while': 'while',
             'break': 'break',
+            'return': 'return',
             'for': 'for',
             '=': '=',
             '+': '+',
@@ -118,12 +119,10 @@ class Lex:
                                 self.addToken()
                                 continue
                         else:
-                            erro = "ERROR: token <{}> not a valid symbol.".format(
+                            erro = "token <{}> not a valid symbol.".format(
                                 self.lexeme)
-                            self.tokens_list.append(erro)
-                            #self.tokens_list.append(dict({self.lexeme: 'not a valid symbol.'}))
+                            self.tokens_list.append(dict({'error': erro}))
                             return self.tokens_list
-                            #raise ValueError(erro)
                 else:
                     self.addToken(self.lexeme)
             else:
@@ -131,6 +130,7 @@ class Lex:
                     self.lexeme = ''
                 else:
                     self.lexeme += " "
+        self.tokens_list.append(dict({'$': '$'}))
         return self.tokens_list
 
     def tokenlistprint(self, tokenList):
