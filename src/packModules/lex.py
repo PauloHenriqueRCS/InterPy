@@ -102,8 +102,8 @@ class Lex:
                         elif self.isKeyword(self.lexeme):
                             self.addToken(self.lexeme)
                             continue
-                        elif ((self.isDigit(self.lexeme)) or (self.isDecimal(self.lexeme))) and ((self.isSymbol(content[lex + 1])) or (self.isLogic(content[lex + 1])) or (self.isId(content[lex + 1]) is False)):
-                            if content[lex + 1] != '.':
+                        elif ((self.isDigit(self.lexeme)) or (self.isDecimal(self.lexeme))) and ((self.isSymbol(content[lex + 1]) is False) or (self.isLogic(content[lex + 1]) is False) or (self.isId(content[lex + 1]) is False)):
+                            if content[lex + 1] != '.' and self.isDigit(content[lex + 1]) is False:
                                 self.addToken()
                                 continue
                         elif self.isLogic(self.lexeme):

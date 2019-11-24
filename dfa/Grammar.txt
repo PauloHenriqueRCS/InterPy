@@ -32,6 +32,7 @@ E,==H
 E,<=H
 E,||H
 F, $
+F, }F
 G,idE
 H,FalseE
 H,TrueE

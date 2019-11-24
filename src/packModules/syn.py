@@ -11,7 +11,7 @@ class Syn:
         self.tokens = []
         self.rules = []
         self.batt = []
-        self.logic = re.compile('(=|>=|<=|>|<|==|!=|\+|\-|\*|\/|\%)')
+        self.logic = re.compile('(=|>=|<=|>|<|\=+|!=|\+|\-|\*|\/|\%)')
         self.symbols = re.compile('\(|\)|\[|\]|\;')
         self.error = False
                 
@@ -44,9 +44,9 @@ class Syn:
             
     def match(self, sym1, sym2):
         if self.logic.search(sym2) is not None:
-            return  self.logic.search(sym2)
+            return  self.logic.findall(sym2)
         elif self.symbols.search(sym2) is not None:
-            return self.symbols.search(sym2)
+            return self.symbols.findall(sym2)
         match = re.compile(sym1)
         return match.search(sym2)
             
@@ -66,12 +66,10 @@ class Syn:
         for rule in self.rules:
             if self.current_batt() == rule.prod:
                 if self.current_token() in rule.prod:
-                    temp = self.match(self.current_token(), rule.prod)
-                    if temp.group() == self.current_token():
-                        self.batt.append(rule.prod[temp.end():])
+                    temp = rule.prod[0:-1]
+                    if temp == self.current_token():
+                        self.batt.append(rule.prod[len(temp):])
                         self.next()
-                        print(self.batt)
-                        print(self.tokens)
                         self.proc()
             
     def analysis(self, list_tokens, list_rules):

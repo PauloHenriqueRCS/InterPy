@@ -31,8 +31,7 @@
 {';': ';'}
 {'id': 'y'}
 {'=': '='}
-{'id': '1'}
-{'id': '5'}
+{'id': '15'}
 {'%': '%'}
 {'id': '12'}
 {';': ';'}
@@ -56,4 +55,4 @@
 {'break': 'break'}
 {';': ';'}
 {'}': '}'}
-{'error': 'token <id> syntatic error.'}
+{'error': 'token <break> syntatic error.'}
